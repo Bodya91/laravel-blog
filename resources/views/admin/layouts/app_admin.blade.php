@@ -19,6 +19,9 @@
     <!-- Styles -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div id="app">
@@ -37,7 +40,7 @@
                         <li class="nav-item dropdown">
                             <a href="#" id="adminDropdown" class="nav-link dropdown-toggle" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>Blog</a>
                             <ul class="dropdown-menu dropdown-menu-left" aria-labelledby="adminDropdown">
-                                <li><a href="#" class="dropdown-item">Categories</a></li>
+                                <li><a href="{{ route('admin.category.index') }}" class="dropdown-item">Categories</a></li>
                                 <li><a href="#" class="dropdown-item">Materials</a></li>
                             </ul>
                         </li>
