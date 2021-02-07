@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix'=>'admin', 'middleware'=>['auth']], function(){
     Route::get('/', [App\Http\Controllers\Admin\DashboardController::class, 'dashboard'])->name('admin.index');
     Route::resource('/category', App\Http\Controllers\Admin\CategoryController::class, ['as' => 'admin']);
+    Route::resource('/article', App\Http\Controllers\Admin\ArticleController::class, ['as' => 'admin']);
     // Route::get('/category', [App\Http\Controllers\Admin\CategoryController::class, 'index'])->name('admin.category.index');
     // Route::post('/category', [App\Http\Controllers\Admin\CategoryController::class, 'store'])->name('admin.category.store');
     // Route::get('/category/create', [App\Http\Controllers\Admin\CategoryController::class, 'create'])->name('admin.category.create');
@@ -26,7 +27,7 @@ Route::group(['prefix'=>'admin', 'middleware'=>['auth']], function(){
 });
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('blog.home');
 });
 
 Auth::routes();
